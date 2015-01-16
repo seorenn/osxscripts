@@ -14,19 +14,19 @@ fi
 echo "Trying Rebase-Merge Current Branch [$BRANCH] to Master..."
 
 git rebase master
-if [ "$?" != "0" ]; then
+if [ $? -ne 0 ]; then
     echo "Failed to rebase master."
     exit -1
 fi
 
 git checkout master
-if [ "$?" != "0" ]; then
+if [ $? -ne 0 ]; then
     echo "Failed to checkout master."
     exit -1
 fi
 
 git merge $BRANCH
-if [ "$?" != "0" ]; then
+if [ $? -ne 0 ]; then
     echo "Failed to merge from branch [$BRANCH]."
     exit -1
 fi
