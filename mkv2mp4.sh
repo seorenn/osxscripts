@@ -1,4 +1,6 @@
 #!/bin/sh
+# this script use libfdk_aac
+# $ brew install ffmpeg --with-fdk-aac
 
 set -e
 
